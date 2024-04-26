@@ -5,10 +5,10 @@ const Navbar = () => {
 
 
     const navLink = <>
-        <li><NavLink className={({ isActive }) => isActive ? 'font-bold text-blue-600 p-1 border border-blue-600 rounded mt-2' : 'font-bold'} to="/">Home</NavLink></li>
-        <li><NavLink className={({ isActive }) => isActive ? 'font-bold text-blue-600 p-1 border border-blue-600 rounded mt-2' : 'font-bold'} to="/update">All Art & craft Items</NavLink></li>
-        <li><NavLink className={({ isActive }) => isActive ? 'font-bold text-blue-600 p-1 border border-blue-600 rounded mt-2' : 'font-bold'} to="/about">Add Craft Item</NavLink></li>
-        <li><NavLink className={({ isActive }) => isActive ? 'font-bold text-blue-600 p-1 border border-blue-600 rounded mt-2' : 'font-bold'} to="/contact">My Art&Craft List</NavLink></li>
+        <li><NavLink className={({ isActive }) => isActive ? 'font-bold text-orange-600 p-1 border border-orange-600 rounded mt-2' : 'font-bold'} to="/">Home</NavLink></li>
+        <li><NavLink className={({ isActive }) => isActive ? 'font-bold text-orange-600 p-1 border border-orange-600 rounded mt-2' : 'font-bold'} to="/update">All Art & craft Items</NavLink></li>
+        <li><NavLink className={({ isActive }) => isActive ? 'font-bold text-orange-600 p-1 border border-orange-600 rounded mt-2' : 'font-bold'} to="/about">Add Craft Item</NavLink></li>
+        <li><NavLink className={({ isActive }) => isActive ? 'font-bold text-orange-600 p-1 border border-orange-600 rounded mt-2' : 'font-bold'} to="/contact">My Art&Craft List</NavLink></li>
     </>
 
     
@@ -24,7 +24,7 @@ const Navbar = () => {
                             {navLink}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">CraftersCove</a>
+                    <a className="btn btn-ghost  text-2xl font-bold text-orange-600">CraftersCove</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -32,8 +32,8 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <Link><a className="btn">Login</a></Link>
-                    <Link><a className="btn ml-2">Register</a></Link>
+                    <Link><a className="btn bg-orange-600 text-white">Login</a></Link>
+                    <Link><a className="btn ml-2 bg-orange-600 text-white">Register</a></Link>
                 </div>
             </div>
         </div>
