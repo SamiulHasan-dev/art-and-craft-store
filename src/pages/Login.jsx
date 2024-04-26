@@ -1,12 +1,79 @@
 import { AiFillGoogleCircle } from "react-icons/ai";
 import { FaGithub } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+import { AuthContext } from "../provider/AuthProvider";
+import { useContext } from "react";
 
 
 const Login = () => {
+
+    const { signIn, logInWithGoogle, logInWithGitHub } = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate()
+    console.log('location in login page',location)
+
+    const handleLogin = e => {
+        e.preventDefault();
+        console.log(e.currentTarget);
+        const form = new FormData(e.currentTarget);
+        const email = form.get('email');
+        const password = form.get('password');
+        console.log(email, password);
+        signIn(email, password)
+            .then(result => {
+                console.log(result.user);
+                toast.success('User Login successfully');
+
+                setTimeout(() => {
+                    navigate(location?.state ? location.state : '/');
+                }, 1500)
+
+            })
+            .catch(error => {
+                console.error(error);
+                toast.error('Invalid email or password');
+            })
+    }
+
+    
+    const handleGoogleLogIn = () => {
+        logInWithGoogle()
+            .then(result => {
+                console.log(result.user);
+                toast.success('Google logged successfully');
+
+                // navigate after login
+                setTimeout(() => {
+                    navigate(location?.state ? location.state : '/');
+                }, 1500)
+            })
+            .catch(error => {
+                console.error(error);
+                toast.error('Google Login Failed');
+            })
+    }
+
+    const handleGitHubLogIn = () =>{
+        logInWithGitHub()
+        .then(result =>{
+            console.log(result.user);
+            toast.success('GitHub Login Successfully');
+
+            
+            setTimeout(() => {
+                navigate(location?.state ? location.state : '/');
+            }, 1500)
+        })
+        .catch(error =>{
+            console.error(error);
+            toast.error('GitHub Login Failed');
+        })
+    }
+
     return (
-        <div>
-            <div className="my-10">
+        <div className="my-10">
             <h2 className="text-3xl text-center font-bold py-10 bg-orange-400 rounded-lg mb-5 text-white">Login Now!</h2>
 
 
@@ -14,7 +81,7 @@ const Login = () => {
             <div className="flex flex-col w-full lg:flex-row">
                 <div className="grid flex-grow  card  rounded-box place-items-center">
 
-                    <form className="card-body w-full mx-auto">
+                    <form onSubmit={handleLogin} className="card-body w-full mx-auto">
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>
@@ -44,19 +111,19 @@ const Login = () => {
 
 
 
-                        <button  className="btn bg-orange-600 text-white "><AiFillGoogleCircle className="text-lg"></AiFillGoogleCircle > Login With Google</button>
+                        <button onClick={handleGoogleLogIn} className="btn bg-orange-600 text-white "><AiFillGoogleCircle className="text-lg"></AiFillGoogleCircle > Login With Google</button>
 
 
 
-                        <button  className="btn bg-orange-600 text-white"><FaGithub className="text-lg"></FaGithub> Login With GitHub</button>
+                        <button onClick={handleGitHubLogIn} className="btn bg-orange-600 text-white"><FaGithub className="text-lg"></FaGithub> Login With GitHub</button>
 
 
                     </div>
 
                 </div>
             </div>
+            <ToastContainer></ToastContainer>
             
-        </div>
         </div>
     );
 };

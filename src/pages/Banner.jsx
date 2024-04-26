@@ -9,10 +9,15 @@ import water from '../assets/water.jpg'
 import sea from '../assets/sea.jpg'
 import sit from '../assets/sit.jpg'
 import { Link } from 'react-router-dom';
+import { useContext } from "react";
+import { AuthContext } from "../provider/AuthProvider";
 
 
 
 const Banner = () => {
+
+    const {user} = useContext(AuthContext);
+
     return (
         <div>
             <div className='rounded-lg shadow-2xl z-10'>
@@ -31,7 +36,9 @@ const Banner = () => {
                             <h1 className="text-white text-3xl font-bold mb-4">Welcome to <span className="text-orange-500  font-bold">Crafter Cove</span></h1>
                             <p className="text-white text-lg text-center">Crafters-Cove is a high-quality Network feature unique of amazing community</p>
 
-                            <Link to="/register"><button className="btn border-orange-400 btn-ghost mt-5  text-white border-2 hover:bg-orange-600">Register Here</button></Link>
+                            {
+                                user ? '' : <Link to="/register"><button className="btn border-orange-400 btn-ghost mt-5  text-white border-2 hover:bg-orange-600">Register Here</button></Link>
+                            }
                             
                         </div>
                     </div>
@@ -42,7 +49,9 @@ const Banner = () => {
                         <h1 className="text-white text-3xl font-bold mb-4">Welcome to <span className="text-orange-500  font-bold">Crafter Cove</span></h1>
                             <p className="text-white text-lg text-center">Crafters-Cove is a high-quality Network feature unique of amazing community</p>
 
-                            <Link to="/register"><button className="btn border-orange-400 btn-ghost mt-5  text-white border-2 hover:bg-orange-600">Register Here</button></Link>
+                            {
+                                user ? '' : <Link to="/register"><button className="btn border-orange-400 btn-ghost mt-5  text-white border-2 hover:bg-orange-600">Register Here</button></Link>
+                            }
                         </div>
                     </div>
                 </SwiperSlide>
@@ -52,7 +61,9 @@ const Banner = () => {
                             <h1 className="text-white text-3xl font-bold mb-4">Welcome to <span className="text-orange-500  font-bold">Crafter Cove</span></h1>
                             <p className="text-white text-lg text-center">Crafters-Cove is a high-quality Network feature unique of amazing community</p>
 
-                            <Link to="/register"><button className="btn border-orange-400 btn-ghost mt-5  text-white border-2 hover:bg-orange-600">Register Here</button></Link>
+                            {
+                                user ? '' : <Link to="/register"><button className="btn border-orange-400 btn-ghost mt-5  text-white border-2 hover:bg-orange-600">Register Here</button></Link>
+                            }
                         </div>
                     </div>
                 </SwiperSlide>
@@ -62,7 +73,9 @@ const Banner = () => {
                         <h1 className="text-white text-3xl font-bold mb-4">Welcome to <span className="text-orange-500  font-bold">Crafter Cove</span></h1>
                             <p className="text-white text-lg text-center">Crafters-Cove is a high-quality Network feature unique of amazing community</p>
 
-                            <Link to="/register"><button className="btn border-orange-400 btn-ghost mt-5  text-white border-2 hover:bg-orange-600">Register Here</button></Link>
+                            {
+                                user ? '' : <Link to="/register"><button className="btn border-orange-400 btn-ghost mt-5  text-white border-2 hover:bg-orange-600">Register Here</button></Link>
+                            }
                         </div>
                     </div>
                 </SwiperSlide>
