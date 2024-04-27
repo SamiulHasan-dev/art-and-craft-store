@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const AddCraft = () => {
@@ -27,26 +28,27 @@ const AddCraft = () => {
         const newCraft = { photo, item, sub, price, rating, customize, processing, stock,email,name,  description }
         console.log(newCraft);
 
-        // send data to the server
-        // fetch('https://coffee-store-server-dun-chi.vercel.app/coffee', {
-        //     method: 'POST',
-        //     headers: {
-        //         'content-type': 'application/json'
-        //     },
-        //     body: JSON.stringify(newCoffee)
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         console.log(data);
-        //         if(data.insertedId){
-        //             Swal.fire({
-        //                 title: 'Success!',
-        //                 text: 'Coffee Added Successfully',
-        //                 icon: 'success',
-        //                 confirmButtonText: 'Cool'
-        //               })
-        //         }
-        //     })
+        //send data to the server
+        fetch('http://localhost:5000/crafts', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newCraft)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if(data.insertedId){
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Craft Added Successfully',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                      })
+                      form.reset()
+                }
+            })
     }
 
     return (
@@ -83,7 +85,7 @@ const AddCraft = () => {
                             <label className="label">
                                 <span className="label-text font-semibold">Price</span>
                             </label>
-                            <input name="price" type="number" placeholder="Price" className="input input-bordered" required />
+                            <input name="price" type="text" placeholder="Price" className="input input-bordered" required />
                         </div>
                     </div>
                     <div className="flex flex-col lg:flex-row gap-5">
