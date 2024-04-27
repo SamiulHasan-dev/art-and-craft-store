@@ -4,6 +4,8 @@ import Root from "../layout/Root";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import ErrorPage from "../pages/ErrorPage";
+import AllCraft from "../pages/AllCraft";
+import AddCraft from "../pages/AddCraft";
 
 
 
@@ -24,6 +26,14 @@ const router = createBrowserRouter([
         {
             path: '/register',
             element: <Register></Register>
+        },
+        {
+          path: '/allCraft',
+          element: <AllCraft></AllCraft>
+        },
+        {
+          path: '/addCraft',
+          element: <AddCraft></AddCraft>
         }
       ]
     },
