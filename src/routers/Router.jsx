@@ -6,6 +6,7 @@ import Register from "../pages/Register";
 import ErrorPage from "../pages/ErrorPage";
 import AllCraft from "../pages/AllCraft";
 import AddCraft from "../pages/AddCraft";
+import ViewDetails from "../pages/ViewDetails";
 
 
 
@@ -29,11 +30,17 @@ const router = createBrowserRouter([
         },
         {
           path: '/allCraft',
-          element: <AllCraft></AllCraft>
+          element: <AllCraft></AllCraft>,
+          loader: ()=> fetch('http://localhost:5000/crafts')
         },
         {
           path: '/addCraft',
           element: <AddCraft></AddCraft>
+        },
+        {
+          path: '/viewDetails/:id',
+          element: <ViewDetails></ViewDetails>,
+          loader: ({params})=> fetch(`http://localhost:5000/crafts/${params.id}`)
         }
       ]
     },
