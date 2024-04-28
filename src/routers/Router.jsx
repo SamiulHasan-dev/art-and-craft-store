@@ -9,6 +9,7 @@ import AddCraft from "../pages/AddCraft";
 import ViewDetails from "../pages/ViewDetails";
 import MyCraft from "../pages/MyCraft";
 import PrivateRoute from "./PrivateRoute";
+import Update from "../pages/Update";
 
 
 
@@ -48,6 +49,11 @@ const router = createBrowserRouter([
         {
           path: '/myCraft',
           element: <PrivateRoute><MyCraft></MyCraft></PrivateRoute>
+        },
+        {
+          path: '/update/:id',
+          element: <PrivateRoute><Update></Update></PrivateRoute>,
+          loader: ({params})=> fetch(`http://localhost:5000/crafts/${params.id}`)
         }
       ]
     },

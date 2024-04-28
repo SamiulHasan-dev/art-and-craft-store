@@ -41,7 +41,7 @@ const MyCraft = () => {
                                 </div>
                                 <p className=""><span className="font-bold">Subcategory Name:</span> {craft.sub}</p>
                                 <div className="text-center space-x-5">
-                                    <Link to='/update'><button className="btn bg-orange-600 text-white">Update</button></Link>
+                                    <Link to={`/update/${craft._id}`}><button className="btn bg-orange-600 text-white">Update</button></Link>
                                     <button className="btn bg-red-500 text-white">Delete</button>
                                 </div>
                             </div>
