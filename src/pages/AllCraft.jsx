@@ -24,7 +24,7 @@ const AllCraft = () => {
                     <tbody>
                         {/* row  */}
                         {
-                            crafts.map((craft, index) => <tr key={craft._id}>
+                            crafts?.map((craft, index) => <tr key={craft._id}>
                                 <th>{index+1}</th>
                                 <td>{craft.item}</td>
                                 <td>{craft.price}</td>
