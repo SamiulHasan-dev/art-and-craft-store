@@ -50,14 +50,34 @@ const MyCraft = () => {
             }
         });
     }
-     
 
+    //for sort by customize
+    const handleSort = () => {
+        fetch(`http://localhost:5000/craftsMails/${user?.email}?sort=customize`)
+            .then(res => res.json())
+            .then(data => {
+                setCrafts(data);
+            })
+            .catch(error => {
+                console.error('Error fetching sorted crafts:', error);
+            });
+    };
 
     
+
 
     return (
         <div>
             <h2 className="text-white p-5 bg-orange-400 rounded-lg font-bold text-2xl text-center w-full mb-10">Crafts Added From My Side</h2>
+            <div className="mb-7">
+                <details className="dropdown">
+                <summary className="m-1 btn bg-yellow-200">Sort Here</summary>
+                <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+                    <li><button onClick={handleSort}><a>Customize By: YES</a></button></li>
+                    
+                </ul>
+            </details>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
                 {
                     crafts?.map(craft => <div key={craft._id}>
@@ -69,17 +89,18 @@ const MyCraft = () => {
                                 <p className="">{craft.description}</p>
                                 <div className="flex">
                                     <p className="flex-1"><span className="font-bold">Processing Time:</span> {craft.processing}</p>
-                                    
+
                                     <p className="flex-1"><span className="font-bold">Price:</span> {craft.price}</p>
                                 </div>
                                 <div className="flex">
-                                <p className="flex-1"><span className="font-bold">Stock:</span> {craft.stock}</p>
+                                    <p className="flex-1"><span className="font-bold">Stock:</span> {craft.stock}</p>
                                     <p className="flex-1"><span className="font-bold">Rating:</span> {craft.rating}</p>
                                 </div>
                                 <p className=""><span className="font-bold">Subcategory Name:</span> {craft.sub}</p>
+                                <p className=""><span className="font-bold">Customize:</span> {craft.customize}</p>
                                 <div className="text-center space-x-5">
                                     <Link to={`/update/${craft._id}`}><button className="btn bg-orange-600 text-white">Update</button></Link>
-                                    <button  onClick={() => handleDelete(craft._id)} className="btn bg-red-500 text-white">Delete</button>
+                                    <button onClick={() => handleDelete(craft._id)} className="btn bg-red-500 text-white">Delete</button>
                                 </div>
                             </div>
                         </div>
