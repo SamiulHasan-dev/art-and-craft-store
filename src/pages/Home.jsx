@@ -1,5 +1,6 @@
 import Banner from "./Banner";
 import Category from "./Category";
+import FamilySection from "./FamilySection";
 import HomeCraft from "./HomeCraft";
 
 
@@ -9,6 +10,7 @@ const Home = () => {
             <Banner></Banner>
             <HomeCraft></HomeCraft>
             <Category></Category>
+            <FamilySection></FamilySection>
         </div>
     );
 };

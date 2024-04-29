@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Fade } from "react-awesome-reveal";
 
 
 const Category = () => {
@@ -6,7 +7,9 @@ const Category = () => {
         <div>
             <div className="my-10 space-y-2">
                 <h2 className="text-3xl font-bold text-center">Crafts Category</h2>
+                <Fade>
                 <p className="text-center w-[70%] mx-auto text-slate-600">Crafting is more than just a hobby. an art form that allows creativity to flourish. Whether seasoned crafter or just starting out, our website is your one-stop destination for inspiration  to life.</p>
+                </Fade>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
