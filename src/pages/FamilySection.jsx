@@ -1,6 +1,6 @@
 import { Fade } from "react-awesome-reveal";
+import { BsHearts } from "react-icons/bs";
 import { HiOutlineUsers } from "react-icons/hi";
-import { LiaHotelSolid } from "react-icons/lia";
 import { MdFamilyRestroom } from "react-icons/md";
 import { SlCalender } from "react-icons/sl";
 
@@ -51,11 +51,12 @@ const FamilySection = () => {
                 <div className="card bg-base-100 flex-1" data-aos="fade-left"  data-aos-duration="1000" >
                     <figure className="px-10 pt-10">
                         
-                        <LiaHotelSolid className="text-4xl font-extrabold"></LiaHotelSolid>
+                        
+                        <BsHearts className="text-4xl font-extrabold" />
                     </figure>
                     <div className="card-body items-center text-center">
-                        <h2 className="card-title text-4xl font-extrabold">2.5k</h2>
-                        <p className="text-lg">Hotels</p>
+                        <h2 className="card-title text-4xl font-extrabold">7.5k</h2>
+                        <p className="text-lg">Reviews</p>
                     </div>
                 </div>
 
