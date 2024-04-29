@@ -35,7 +35,9 @@ const Navbar = () => {
         <li><NavLink className={({ isActive }) => isActive ? 'font-bold text-orange-600 p-1 border border-orange-600 rounded mt-2' : 'font-bold'} to="/">Home</NavLink></li>
         <li><NavLink className={({ isActive }) => isActive ? 'font-bold text-orange-600 p-1 border border-orange-600 rounded mt-2' : 'font-bold'} to="/allCraft">All Art & craft Items</NavLink></li>
         <li><NavLink className={({ isActive }) => isActive ? 'font-bold text-orange-600 p-1 border border-orange-600 rounded mt-2' : 'font-bold'} to="/addCraft">Add Craft Item</NavLink></li>
-        <li><NavLink className={({ isActive }) => isActive ? 'font-bold text-orange-600 p-1 border border-orange-600 rounded mt-2' : 'font-bold'} to="/myCraft">My Art&Craft List</NavLink></li>
+        {
+            user ? <li><NavLink className={({ isActive }) => isActive ? 'font-bold text-orange-600 p-1 border border-orange-600 rounded mt-2' : 'font-bold'} to="/myCraft">My Art&Craft List</NavLink></li> : '' 
+        }
     </>
 
 
