@@ -8,7 +8,7 @@ const Charcoal = () => {
 
 
     useEffect(()=>{
-        fetch('http://localhost:5000/charcoal')
+        fetch('https://crafters-cove-server.vercel.app/charcoal')
         .then(res => res.json())
         .then(data=>setCraft(data))
     },[])

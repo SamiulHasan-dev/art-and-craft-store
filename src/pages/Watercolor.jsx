@@ -8,7 +8,7 @@ const Watercolor = () => {
 
 
     useEffect(()=>{
-        fetch('http://localhost:5000/watercolour')
+        fetch('https://crafters-cove-server.vercel.app/watercolour')
         .then(res => res.json())
         .then(data=>setCraft(data))
     },[])

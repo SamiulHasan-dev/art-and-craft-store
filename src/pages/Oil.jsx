@@ -8,7 +8,7 @@ const Oil = () => {
 
 
     useEffect(()=>{
-        fetch('http://localhost:5000/oil')
+        fetch('https://crafters-cove-server.vercel.app/oil')
         .then(res => res.json())
         .then(data=>setCraft(data))
     },[])

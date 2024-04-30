@@ -8,7 +8,7 @@ const Portrait = () => {
 
 
     useEffect(()=>{
-        fetch('http://localhost:5000/portrait')
+        fetch('https://crafters-cove-server.vercel.app/portrait')
         .then(res => res.json())
         .then(data=>setCraft(data))
     },[])

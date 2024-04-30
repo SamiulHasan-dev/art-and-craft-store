@@ -29,7 +29,7 @@ const Update = () => {
         console.log(newCraft);
 
         //send data to the server
-        fetch(`http://localhost:5000/crafts/${craft._id}`, {
+        fetch(`https://crafters-cove-server.vercel.app/crafts/${craft._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

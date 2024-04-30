@@ -42,7 +42,7 @@ const router = createBrowserRouter([
         {
           path: '/allCraft',
           element: <AllCraft></AllCraft>,
-          loader: ()=> fetch('http://localhost:5000/crafts')
+          loader: ()=> fetch('https://crafters-cove-server.vercel.app/crafts')
         },
         {
           path: '/addCraft',
@@ -51,7 +51,7 @@ const router = createBrowserRouter([
         {
           path: '/viewDetails/:id',
           element: <PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>,
-          loader: ({params})=> fetch(`http://localhost:5000/crafts/${params.id}`)
+          loader: ({params})=> fetch(`https://crafters-cove-server.vercel.app/crafts/${params.id}`)
         },
         {
           path: '/myCraft',
@@ -60,7 +60,7 @@ const router = createBrowserRouter([
         {
           path: '/update/:id',
           element: <PrivateRoute><Update></Update></PrivateRoute>,
-          loader: ({params})=> fetch(`http://localhost:5000/crafts/${params.id}`)
+          loader: ({params})=> fetch(`https://crafters-cove-server.vercel.app/crafts/${params.id}`)
         },
         {
           path: '/landscape',
@@ -89,7 +89,7 @@ const router = createBrowserRouter([
         {
           path: '/viewCategory/:id',
           element: <PrivateRoute><ViewCategory></ViewCategory></PrivateRoute>,
-          loader: ({params})=> fetch(`http://localhost:5000/arts/${params.id}`)
+          loader: ({params})=> fetch(`https://crafters-cove-server.vercel.app/arts/${params.id}`)
         },
       ]
     },

@@ -12,7 +12,7 @@ const MyCraft = () => {
     console.log(crafts)
 
     useEffect(() => {
-        fetch(`http://localhost:5000/craftsMail/${user?.email}`)
+        fetch(`https://crafters-cove-server.vercel.app/craftsMail/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setCrafts(data);
@@ -31,7 +31,7 @@ const MyCraft = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/crafts/${id}`, {
+                fetch(`https://crafters-cove-server.vercel.app/crafts/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -53,7 +53,7 @@ const MyCraft = () => {
 
     //for sort by customize
     const handleSort = () => {
-        fetch(`http://localhost:5000/craftsMails/${user?.email}?sort=customize`)
+        fetch(`https://crafters-cove-server.vercel.app/craftsMails/${user?.email}?sort=customize`)
             .then(res => res.json())
             .then(data => {
                 setCrafts(data);

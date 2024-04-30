@@ -8,7 +8,7 @@ const HomeCraft = () => {
     const [crafts, setCrafts] = useState(null)
 
     useEffect(() => {
-        fetch('http://localhost:5000/crafts')
+        fetch('https://crafters-cove-server.vercel.app/crafts')
             .then(res => res.json())
             .then(data => setCrafts(data))
     }, [])

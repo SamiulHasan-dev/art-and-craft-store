@@ -9,7 +9,7 @@ const Landscape = () => {
 
 
     useEffect(()=>{
-        fetch('http://localhost:5000/landscape')
+        fetch('https://crafters-cove-server.vercel.app/landscape')
         .then(res => res.json())
         .then(data=>setCraft(data))
     },[])
