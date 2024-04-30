@@ -10,4 +10,9 @@
 4. Easily Manage Profile
 5. User base Data upgration
 
-# selected category : Painting and Drawing
+# selected category : 
+  Painting and Drawing
+
+# NPM Package
+a. React-simple-typewriter
+b. React Awesome reveal
