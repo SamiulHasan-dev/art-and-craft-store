@@ -17,7 +17,7 @@ const AllCraft = () => {
                             <th>Item Name</th>
                             <th>Price</th>
                             <th>Customization</th>
-                            <th>Stock Status</th>
+                            <th className="hidden md:block">Stock Status</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -29,7 +29,7 @@ const AllCraft = () => {
                                 <td>{craft.item}</td>
                                 <td>{craft.price}</td>
                                 <td>{craft.customize}</td>
-                                <td>{craft.stock}</td>
+                                <td className="hidden md:block">{craft.stock}</td>
                                 <td><Link  to={`/viewDetails/${craft._id}`}><button className="btn bg-orange-600 text-white">View Details</button></Link></td>
                             </tr>)
                         }

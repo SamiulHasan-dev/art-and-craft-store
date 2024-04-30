@@ -40,7 +40,7 @@ const FeatureSection = () => {
                     </figure>
                     <div className="card-body items-center text-center">
                     <h2 className="card-title text-xl font-bold">Track Your Service</h2>
-                        <p className="text-lg text-slate-500">users track their entire service in track</p>
+                        <p className="text-lg text-slate-500">users track their entire service in track of entire process</p>
                     </div>
                 </div>
                 {/* card 3 */}
@@ -53,8 +53,8 @@ const FeatureSection = () => {
 
                     </figure>
                     <div className="card-body items-center text-center">
-                    <h2 className="card-title text-xl font-bold">Secure Booking</h2>
-                        <p className="text-lg text-slate-500">Book with confidence using our secure payment options.</p>
+                    <h2 className="card-title text-xl font-bold">Secure GatWay</h2>
+                        <p className="text-lg text-slate-500">Buy with confidence using our secure payment options.</p>
                     </div>
                 </div>
             </div>
@@ -97,7 +97,7 @@ const FeatureSection = () => {
                     </figure>
                     <div className="card-body items-center text-center">
                     <h2 className="card-title text-xl font-bold">Personalized Recommendations</h2>
-                        <p className="text-lg text-slate-500">Discover hotels tailored to your preferences and past bookings</p>
+                        <p className="text-lg text-slate-500">Discover crafts tailored to your preferences and past buying</p>
                     </div>
                 </div>
             </div>
